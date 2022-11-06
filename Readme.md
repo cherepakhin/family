@@ -3,7 +3,7 @@
 Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
 
 План:
-db, rest, kafka, Spring Security, Swagger<br/>
+kafka, Spring Security, Swagger<br/>
 Сделано:
 db, rest, behave, allure
 #### Тесты
