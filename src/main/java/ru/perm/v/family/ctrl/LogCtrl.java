@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-public class LogController {
+public class LogCtrl {
 
     // Каталог микросервиса
     @Value("${user.dir}")
