@@ -43,6 +43,7 @@ logging:
     name: log/app.log
 ````
 Логи будут в log/api.log
+И также по через [http://127.0.0.1:8888/api/log](http://127.0.0.1:8888/api/log)
 
 #### Behave тесты (они же интеграционные)
 Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).
