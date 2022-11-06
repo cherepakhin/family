@@ -3,9 +3,9 @@
 Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
 
 План:
-db, rest, kafka, behave, allure, Spring Security, Swagger
+db, rest, kafka, Spring Security, Swagger<br/>
 Сделано:
-db, rest
+db, rest, behave, allure
 #### Тесты
 Echo тест
 ````
@@ -33,4 +33,17 @@ psql -U familyuser  --dbname=family --host=192.168.1.20 -W
 ````
 mvn flyway:migrate
 ````
+
+#### Behave тесты (они же интеграционные.)
+Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/) .<br/>
+Настройки и сами тесты лежат в папке [src/behave/](https://github.com/cherepakhin/family/tree/master/src/behave/) 
+
+Запуск тестов
+````
+cd behave
+behave
+allure serve reports/
+````
+Откроется браузер со страницей результатов тестирования
+![страницей результатов тестирования](/behave/doc/allure.png)
 
