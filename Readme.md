@@ -37,11 +37,12 @@ mvn flyway:migrate
 Настройка в [application.yaml](src/main/resources/application.yaml)
 ````
 logging:
-    level:
-        root: info
-    file:
-        path: log/app.log
+  level:
+    root: info
+  file:
+    name: log/app.log
 ````
+Логи будут в log/api.log
 
 #### Behave тесты (они же интеграционные)
 Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).

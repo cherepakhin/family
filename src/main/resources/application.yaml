@@ -27,7 +27,7 @@ logging:
   level:
     root: info
   file:
-    path: log/app.log
+    name: log/app.log
 
 management:
   health:
