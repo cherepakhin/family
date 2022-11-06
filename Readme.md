@@ -33,6 +33,15 @@ psql -U familyuser  --dbname=family --host=192.168.1.20 -W
 ````
 mvn flyway:migrate
 ````
+####Логгирование
+Настройка в [application.yaml](src/main/resources/application.yaml)
+````
+logging:
+    level:
+        root: info
+    file:
+        path: log/app.log
+````
 
 #### Behave тесты (они же интеграционные)
 Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).
