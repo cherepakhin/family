@@ -52,3 +52,9 @@ allure serve reports/
 Откроется браузер со страницей результатов тестирования
 ![страницей результатов тестирования](/behave/doc/allure.png)
 
+#### Документация javadoc
+Генерация
+````shell
+mvn javadoc:javadoc
+````
+Документацию смотреть в [target/site/apidocs/index.html](/target/site/apidocs/index.html)

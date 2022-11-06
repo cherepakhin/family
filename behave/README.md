@@ -22,3 +22,4 @@ cd behave
 behave -f allure_behave.formatter:AllureFormatter -o reports
 allure serve reports/
 ````
+
