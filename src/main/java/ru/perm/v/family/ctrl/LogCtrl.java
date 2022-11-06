@@ -22,6 +22,7 @@ public class LogCtrl {
 
     /**
      * Получение протокола работы
+     *
      * @param path путь к файлу логов
      * @return содержимое файла
      * @throws IOException файл не найден
