@@ -35,7 +35,7 @@ mvn flyway:migrate
 ````
 
 #### Behave тесты (они же интеграционные)
-Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/) .<br/>
+Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).<br/>
 Настройки и сами тесты лежат в папке [behave/](https://github.com/cherepakhin/family/tree/dev/behave) 
 
 Запуск тестов
