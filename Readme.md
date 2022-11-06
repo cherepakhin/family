@@ -57,4 +57,4 @@ allure serve reports/
 ````shell
 mvn javadoc:javadoc
 ````
-Документацию смотреть в [target/site/apidocs/index.html](/target/site/apidocs/index.html)
+Документация будет сгенерирована в [target/site/apidocs/index.html](/target/site/apidocs/index.html)
