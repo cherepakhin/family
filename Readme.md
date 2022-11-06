@@ -2,10 +2,10 @@
 
 Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
 
-План:
-kafka, Spring Security<br/>
+План: db, error controller, kafka, Spring Security<br/>
 Сделано:
-db, rest, behave, allure, Swagger(OpenApi)
+ rest, behave, allure, Swagger(OpenApi), actuator
+
 #### Тесты
 Echo тест
 ````
@@ -74,9 +74,12 @@ mvn javadoc:javadoc
  mvn spring-boot:run
 ````
 Документация будет доступна<br/>
-[http://127.0.0.1:8888/api/swagger-ui/index.html](http://127.0.0.1:8888/api/swagger-ui/index.html)
+В формате swagger [http://127.0.0.1:8888/api/swagger-ui/index.html](http://127.0.0.1:8888/api/swagger-ui/index.html)
 <br/>
-[http://127.0.0.1:8888/api/v3/api-docs](http://127.0.0.1:8888/api/v3/api-docs)
+В формате OpenApi [http://127.0.0.1:8888/api/v3/api-docs](http://127.0.0.1:8888/api/v3/api-docs)
 
-
-
+#### Мониторинг
+Actuator spring
+http://127.0.0.1:8081/actuator <br/>
+Метрики для prometeus
+http://127.0.0.1:8081/actuator/health
