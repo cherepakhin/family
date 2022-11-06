@@ -4,7 +4,8 @@
 
 План:
 db, rest, kafka, behave, allure, Spring Security, Swagger
-
+Сделано:
+db, rest
 #### Тесты
 Echo тест
 ````
