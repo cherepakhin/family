@@ -3,9 +3,9 @@
 Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
 
 План:
-kafka, Spring Security, Swagger<br/>
+kafka, Spring Security<br/>
 Сделано:
-db, rest, behave, allure
+db, rest, behave, allure, Swagger(OpenApi)
 #### Тесты
 Echo тест
 ````
@@ -35,15 +35,15 @@ mvn flyway:migrate
 ````
 
 #### Behave тесты (они же интеграционные)
-Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).<br/>
-Настройки и сами тесты лежат в папке [behave/](https://github.com/cherepakhin/family/tree/dev/behave) 
+Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).
+Настройки и сами тесты лежат в папке [/behave](https://github.com/cherepakhin/family/tree/dev/behave) 
 
 Запуск тестов
 ````
 cd behave
 behave
 ````
-![результаты](/behave/doc/behave.png)
+[результаты](/behave/doc/behave.png)
 
 Красиво посмотреть на результаты 
 ````
@@ -58,3 +58,16 @@ allure serve reports/
 mvn javadoc:javadoc
 ````
 Документация будет сгенерирована в [target/site/apidocs/index.html](/target/site/apidocs/index.html)
+
+#### Swagger
+Запустить приложение
+````shell
+ mvn spring-boot:run
+````
+Документация будет доступна<br/>
+[http://127.0.0.1:8888/api/swagger-ui/index.html](http://127.0.0.1:8888/api/swagger-ui/index.html)
+<br/>
+[http://127.0.0.1:8888/api/v3/api-docs](http://127.0.0.1:8888/api/v3/api-docs)
+
+
+
