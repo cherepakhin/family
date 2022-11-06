@@ -34,7 +34,7 @@ psql -U familyuser  --dbname=family --host=192.168.1.20 -W
 mvn flyway:migrate
 ````
 
-#### Behave тесты (они же интеграционные.)
+#### Behave тесты (они же интеграционные)
 Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/) .<br/>
 Настройки и сами тесты лежат в папке [src/behave/](https://github.com/cherepakhin/family/tree/master/src/behave/) 
 
