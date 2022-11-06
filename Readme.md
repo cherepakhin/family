@@ -33,7 +33,7 @@ psql -U familyuser  --dbname=family --host=192.168.1.20 -W
 ````
 mvn flyway:migrate
 ````
-####Логгирование
+#### Логгирование
 Настройка в [application.yaml](src/main/resources/application.yaml)
 ````
 logging:
