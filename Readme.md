@@ -42,6 +42,11 @@ mvn flyway:migrate
 ````
 cd behave
 behave
+````
+![результаты](/behave/doc/behave.png)
+
+Красиво посмотреть на результаты 
+````
 allure serve reports/
 ````
 Откроется браузер со страницей результатов тестирования
