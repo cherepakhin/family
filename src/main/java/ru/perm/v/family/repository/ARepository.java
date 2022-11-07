@@ -6,7 +6,7 @@ package ru.perm.v.family.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
-import ru.mts.dealer.persist.entity.AEntity;
+import ru.perm.v.family.entity.AEntity;
 
 /**
  * Абстрактный интерфейс для репозиториев сущностей c уникальным id

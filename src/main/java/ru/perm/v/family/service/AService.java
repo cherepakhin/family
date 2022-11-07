@@ -5,7 +5,7 @@
 package ru.perm.v.family.service;
 
 import java.util.List;
-import ru.mts.dealer.persist.entity.AEntity;
+import ru.perm.v.family.entity.AEntity;
 
 /**
  * Интерфейс сервиса сущностей с уникальным полем id
