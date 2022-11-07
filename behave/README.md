@@ -15,11 +15,18 @@ pip3 install -r requirements.txt
 
 ### Запуск тестов
 
-В каталоге проекта выполнить. Результаты тестов будут в каталоге reports
+Выполнять в каталоге behave. Результаты тестов будут в каталоге reports
 
 ````shell script
 cd behave
 behave -f allure_behave.formatter:AllureFormatter -o reports
 allure serve reports/
+````
+---
+Пободался с behave. Разрулил так
+
+````bash
+pip3 install FullLoader
+pip3 install -U PyYAML
 ````
 

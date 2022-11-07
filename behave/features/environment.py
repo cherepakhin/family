@@ -4,7 +4,7 @@ import behave_restful.app as br_app
 import yaml
 
 def before_all(context):
-    context.settings=yaml.load(open('features/conf.yaml'),Loader=yaml.FullLoader)
+    context.settings=yaml.load(open('features/conf.yaml'))
 
     this_directory = os.path.abspath(os.path.dirname(__file__))
     br_app.BehaveRestfulApp().initialize_context(context, this_directory)
