@@ -1,8 +1,10 @@
 #### Тестовый проект "Семья". 
 
-Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
+Проект для всплытия после перерыва.
 
-План: Enum, Mockito, @Configuration, @Value, error controller, db (разные join, integration test, aggregate sql..., @Sql, @Query, @Param ...), kafka, Spring Security, Docker, Camunda, Docker Compose.<br/>
+Суть: Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
+
+План: Enum, Mockito, @Configuration, @Value, error controller, db (enum в db,разные join, integration test, aggregate sql..., @Sql, @Query, @Param ...), kafka, Spring Security, Docker, Camunda, Docker Compose.<br/>
 
 Сделано:
  rest, logging, behave, allure, Swagger(OpenApi), actuator (monitoring)
