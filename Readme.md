@@ -5,7 +5,7 @@
 План: Mockito, @Configuration, @Value, error controller, db (разные join, integration test, aggregate sql..., @Sql, @Query, @Param ...), kafka, Spring Security, Docker, Camunda, Docker Compose.<br/>
 
 Сделано:
- rest, behave, allure, Swagger(OpenApi), actuator (monitoring)
+ rest, logging, behave, allure, Swagger(OpenApi), actuator (monitoring)
 
 #### Тесты
 Echo тест
