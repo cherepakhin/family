@@ -5,7 +5,7 @@
 План: db, error controller, kafka, Spring Security, Mockito, PostgreSQL.<br/>
 
 Сделано:
- rest, behave, allure, Swagger(OpenApi), actuator
+ rest, behave, allure, Swagger(OpenApi), actuator (monitoring)
 
 #### Тесты
 Echo тест
