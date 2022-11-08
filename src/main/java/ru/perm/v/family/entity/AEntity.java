@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2021 MTS http://mts.ru
- */
-
 package ru.perm.v.family.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

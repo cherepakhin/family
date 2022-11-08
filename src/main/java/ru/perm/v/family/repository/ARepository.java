@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2021 MTS http://mts.ru
- */
-
 package ru.perm.v.family.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
