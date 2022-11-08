@@ -4,4 +4,5 @@ CREATE TABLE person
     "name" varchar NOT NULL default ''
 );
 
-insert into person(id, "name") values (0, '-');
+insert into person(id, "name")
+values (0, '-');

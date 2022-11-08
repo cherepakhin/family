@@ -1,6 +1,6 @@
 package ru.perm.v.family.ctrl;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -17,9 +17,10 @@ import org.springframework.test.web.servlet.MvcResult;
 @ContextConfiguration(classes = {PersonCtrl.class})
 @WebMvcTest
 class PersonCtrlTest {
+
+    private final String root = "/person";
     @Autowired
     private MockMvc mockMvc;
-    private final String root = "/person";
 
     @Test
     void echo() throws Exception {
