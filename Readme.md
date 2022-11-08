@@ -78,12 +78,12 @@ mvn javadoc:javadoc
  mvn spring-boot:run
 ````
 Документация будет доступна<br/>
-В формате swagger [http://127.0.0.1:8888/api/swagger-ui/index.html](http://127.0.0.1:8888/api/swagger-ui/index.html)
+В формате swagger [http://127.0.0.1:8780/api/swagger-ui/index.html]http://127.0.0.1:8780/api/swagger-ui/index.html)
 <br/>
-В формате OpenApi [http://127.0.0.1:8888/api/v3/api-docs](http://127.0.0.1:8888/api/v3/api-docs)
+В формате OpenApi [http://127.0.0.1:8780/api/v3/api-docs](http://127.0.0.1:8780/api/v3/api-docs)
 
 #### Мониторинг
 Actuator spring
-http://127.0.0.1:8081/actuator <br/>
+http://127.0.0.1:8781/actuator <br/>
 Метрики для prometeus
-http://127.0.0.1:8081/actuator/health
+http://127.0.0.1:8781/actuator/health
