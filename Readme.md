@@ -2,7 +2,7 @@
 
 Поженить двух людей ( People ). Мужчину и женщину. Пусть нарожают детей.
 
-План: Mockito, error controller, db, kafka, Spring Security, Camunda.<br/>
+План: Mockito, error controller, db, kafka, Spring Security, Docker, Camunda, Docker Compose.<br/>
 
 Сделано:
  rest, behave, allure, Swagger(OpenApi), actuator (monitoring)
