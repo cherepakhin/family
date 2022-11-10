@@ -9,7 +9,7 @@
 #### Тесты
 Echo тест
 ````
-http GET :8888/api/family/echo/aaa
+http GET :8780/api/family/echo/aaa
 HTTP/1.1 200 
 Connection: keep-alive
 Content-Length: 3
