@@ -6,8 +6,3 @@ Feature: Проверка echo
     Then the response status is Ok
     And Получен текст test_string
 
-  Scenario: Тест echo/test_string через dev_host
-    Given Запрос на dev /api/family/echo/test_string
-    When the request sends GET
-    Then the response status is Ok
-    And Получен текст test_string
