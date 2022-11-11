@@ -15,7 +15,7 @@ pip3 install -r requirements.txt
 
 ### Запуск тестов
 
-Выполнять в каталоге behave. Результаты тестов будут в каталоге reports
+Выполнять в каталоге **behave(!!!)**. Результаты тестов будут в каталоге reports
 
 ````shell script
 cd behave

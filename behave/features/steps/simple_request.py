@@ -2,6 +2,7 @@ import json
 import datetime
 import os
 import webbrowser
+from pprint import pprint
 
 from behave import given, use_step_matcher, then, step, when
 import jsonpath_ng
@@ -9,14 +10,14 @@ from jsonpath_ng.ext import parse
 import requests
 import behave_restful._lang_imp.response_validator as _validate
 import time
-
+dev_host='http://127.0.0.1:8780'
 use_step_matcher("parse")
 
 
 @given('Запрос на dev {test_url}')
 def step_impl(context, test_url):
   context.execute_steps(
-      'given a request url {}{}'.format(context.settings['dev_host'], test_url))
+      'given a request url {}{}'.format(dev_host, test_url))
 
 
 @given('Запрос с переменными на dev {test_url}')
@@ -25,7 +26,7 @@ def step_impl(context, test_url):
   print(saved_vars)
   req = test_url.format_map(saved_vars)
   context.execute_steps(
-      'given a request url {}{}'.format(context.settings['dev_host'], req))
+      'given a request url {}{}'.format(dev_host, req))
 
 
 @then('Показать ответ')
@@ -134,8 +135,7 @@ def step_impl(context, path):
   print('---------')
   print(saved_vars)
   req = path.format_map(saved_vars)
-  test_url = 'given a request url {}{}'.format(context.settings['dev_host'],
-                                               req)
+  test_url = 'given a request url {}{}'.format(dev_host, req)
   context.execute_steps(
       'given a request url {}'.format(context.settings['dev_host'], test_url))
 
@@ -177,7 +177,7 @@ def step_impl(context, file):
 
 @then('Полученный файл по {url} равен {file}')
 def step_impl(context, url, file):
-  download_url = '{}{}'.format(context.settings['dev_host'], url)
+  download_url = '{}{}'.format(dev_host, url)
   r = requests.get(download_url, headers=context.request_headers)
   assert r.status_code == 200
   f = open(file, 'r')

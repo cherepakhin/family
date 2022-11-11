@@ -1,14 +1,13 @@
 import os
 
 import behave_restful.app as br_app
-import yaml
+
 
 def before_all(context):
-    context.settings=yaml.load(open('features/conf.yaml'))
-
     this_directory = os.path.abspath(os.path.dirname(__file__))
     br_app.BehaveRestfulApp().initialize_context(context, this_directory)
     context.hooks.invoke(br_app.BEFORE_ALL, context)
+
 
 def after_all(context):
     context.hooks.invoke(br_app.AFTER_ALL, context)

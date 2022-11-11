@@ -1,7 +1,13 @@
 Feature: Проверка echo
 
-  Scenario: Тест echo/aaa
-    Given Запрос на dev /family/echo/test_string
+  Scenario: Тест echo/aaa через http
+    Given a request url http://127.0.0.1:8780/api/family/echo/test_string
     When the request sends GET
     Then the response status is Ok
-    And Получена test_string
+    And Получен текст test_string
+
+  Scenario: Тест echo/test_string через dev_host
+    Given Запрос на dev /api/family/echo/test_string
+    When the request sends GET
+    Then the response status is Ok
+    And Получен текст test_string
