@@ -21,7 +21,7 @@ spring:
 server:
   servlet:
     context-path: /api
-  port: 8780
+  port: ${API_PORT:8780}
 
 logging:
   level:

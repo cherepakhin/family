@@ -83,10 +83,29 @@ mvn javadoc:javadoc
 Документация будет доступна<br/>
 В формате swagger [http://127.0.0.1:8780/api/swagger-ui/index.html]http://127.0.0.1:8780/api/swagger-ui/index.html)
 <br/>
-В формате OpenApi [http://127.0.0.1:8780/api/v3/api-docs](http://127.0.0.1:8780/api/v3/api-docs)
+В формате OpenApi [http://127.0.0.1:8780/api/v3/api-docs](http://127.0.0.1:8781/api/v3/api-docs)
 
 #### Мониторинг
 Actuator spring
 http://127.0.0.1:8781/actuator <br/>
 Метрики для prometeus
 http://127.0.0.1:8781/actuator/health
+
+### Переменные окружения
+
+| Название | Значение по умолчанию                       | Описание                     |
+| --- |---------------------------------------------|------------------------------|
+| API_PORT | 8780                                        | Порт приложения              |
+| DB_USERNAME | familyuser                                  | Имя пользователя СУБД        |
+| DB_PASS | familyuser                                  | Пароль пользователя СУБД     |
+| DB_URL | jdbc:postgresql://192.168.1.20:5432/family  | Путь к СУБД                  |
+
+### EndPoints
+
+Для actuator порт 8081
+
+| Название | Описание |
+| --- |------- | 
+| GET /actuator | Healthcheck метрики и пр. инфа о приложении https://www.baeldung.com/spring-boot-actuators |
+|GET /actuator/prometheus|Получение метрик Prometheus|
+|GET /api/echo/{message}|Для тестов|
