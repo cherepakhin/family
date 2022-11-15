@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.perm.v.family.entity.PersonEntity;
 import ru.perm.v.family.repository.PersonRepository;
-import ru.perm.v.family.service.PersonService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
