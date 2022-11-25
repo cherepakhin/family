@@ -20,24 +20,15 @@ class PersonServiceImplTest {
 
     @Test
     void getById() {
-        PersonEntity expectedPerson = new PersonEntity();
-        expectedPerson.setId(0L);
-        expectedPerson.setName("-");
-        when(mockPersonRepository.getReferenceById(0L)).thenReturn(expectedPerson);
-        PersonEntity person = personService.getById(0L);
-        assertEquals(expectedPerson,person);
-    }
-
-    @Test
-    void getByIdMockRepository() {
-        Long ID= 0L;
+        Long ID = 100L;
         PersonEntity expectedPerson = new PersonEntity();
         expectedPerson.setId(ID);
-        expectedPerson.setName("-");
+        expectedPerson.setName("--");
         when(mockPersonRepository.getReferenceById(ID)).thenReturn(expectedPerson);
 
-        PersonEntity actualPerson = personService.getById(ID);
-        assertEquals(expectedPerson,actualPerson);
+        PersonEntity person = personService.getById(ID);
+
+        assertEquals(expectedPerson, person);
         verify(mockPersonRepository, times(1)).getReferenceById(ID);
     }
 }

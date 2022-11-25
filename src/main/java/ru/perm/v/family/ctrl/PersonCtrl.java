@@ -5,13 +5,15 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.perm.v.family.service.PersonService;
 
 /**
  * Контроллер семьи
@@ -20,9 +22,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/person")
 @Slf4j
 @Validated
-@AllArgsConstructor
 @Api(tags = "Person Controller")
 public class PersonCtrl {
+
+    @Autowired
+//    @Qualifier("personService")
+    PersonService personService;
+
+//    public PersonCtrl(PersonFacadeService personFacadeService) {
+//        this.personFacadeService = personFacadeService;
+//    }
 
     /**
      * Эхо контроллер для теста

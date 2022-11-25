@@ -1,12 +1,12 @@
 package ru.perm.v.family.service.impl;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.perm.v.family.entity.PersonEntity;
 import ru.perm.v.family.repository.PersonRepository;
 import ru.perm.v.family.service.PersonService;
 
 import java.util.List;
-
 @Service
 public class PersonServiceImpl implements PersonService {
     private final PersonRepository personRepository;
@@ -17,7 +17,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public PersonEntity getById(Long id) {
-        return personRepository.getReferenceById(id);
+        return personRepository.getById(id);
     }
 
     @Override

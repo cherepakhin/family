@@ -12,9 +12,10 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import ru.perm.v.family.service.PersonService;
 
 @AutoConfigureMockMvc
-@ContextConfiguration(classes = {PersonCtrl.class})
+//@ContextConfiguration(classes = {PersonCtrl.class, PersonService.class})
 @WebMvcTest
 class PersonCtrlTest {
 
