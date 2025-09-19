@@ -4,8 +4,8 @@ spring:
   dataSource:
     url: ${DB_URL:jdbc:postgresql://192.168.1.20:5432/family}
     driverClassName: org.postgresql.Driver
-    username: ${DB_USERNAME:familyuser}
-    password: ${DB_PASS:familyuser}
+    username: ${DB_USERNAME:vasi}
+    password: ${DB_PASS:pass}
   hibernate:
     dialect: org.hibernate.dialect.PostgreSQLDialect
     generate_statistics: true

@@ -35,6 +35,7 @@ psql -U familyuser  --dbname=family --host=192.168.1.20 -W
 Накат изменений в БД
 ````
 mvn flyway:migrate
+./mvnw flyway:migrate -Dflyway.url=jdbc:postgresql://192.168.1.20:5432/family -Dflyway.user=vasi -Dflyway.password=pass
 ````
 #### Логгирование
 Настройка в [application.yaml](src/main/resources/application.yaml)
@@ -49,7 +50,15 @@ logging:
 И также по через [http://127.0.0.1:8780/api/log](http://127.0.0.1:8780/api/log)
 <br/> [http://127.0.0.1:8781/actuator/logfile](http://127.0.0.1:8781/actuator/logfile) <br/>
 Не всегда есть доступ к логам. Поэтому показаны несколько способов.
+
+#### Unit tests
+
+````shell
+./mvnw test
+````
+
 #### Behave тесты (они же интеграционные)
+
 Сделаны с помощью утилиты [behave](https://behave.readthedocs.io/en/stable/).
 Настройки и сами тесты лежат в папке [/behave](https://github.com/cherepakhin/family/tree/dev/behave) 
 
@@ -92,6 +101,15 @@ http://127.0.0.1:8781/actuator <br/>
 http://127.0.0.1:8781/actuator/health
 
 ### Переменные окружения
+
+Java 11
+
+````shell
+$ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+$ echo $JAVA_HOME
+/usr/lib/jvm/java-11-openjdk-amd64
+````
+
 
 | Название | Значение по умолчанию                       | Описание                     |
 | --- |---------------------------------------------|------------------------------|
