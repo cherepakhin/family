@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import ru.perm.v.family.service.PersonService;
 
 import lombok.val;
 import ru.perm.v.family.dto.PersonDto;
@@ -25,7 +26,7 @@ import ru.perm.v.family.service.PersonService;
 import java.util.List;
 
 @AutoConfigureMockMvc
-@ContextConfiguration(classes = {PersonCtrl.class})
+//@ContextConfiguration(classes = {PersonCtrl.class, PersonService.class})
 @WebMvcTest
 class PersonCtrlTest {
 

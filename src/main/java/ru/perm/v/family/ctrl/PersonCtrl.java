@@ -7,11 +7,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ru.perm.v.family.dto.PersonDto;
-import ru.perm.v.family.entity.PersonEntity;
-import ru.perm.v.family.service.PersonService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,8 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "Person Controller")
 public class PersonCtrl {
 
-    @Autowired
-    private PersonService personService;
     /**
      * Эхо контроллер для теста
      *
@@ -46,12 +39,5 @@ public class PersonCtrl {
         @ApiParam("любая тестовая строка. Должна вернуться в ответе.") @PathVariable String mes) {
         log.info("Request \"echo\" received: {}", mes);
         return mes;
-    }
-
-    @GetMapping("/id/{id}")
-    public PersonDto getById(@PathVariable Long id) {
-        PersonEntity personEntity = personService.getById(id);
-        PersonDto personDto = new PersonDto(personEntity.getId(), personEntity.getName());
-        return personDto;
     }
 }
