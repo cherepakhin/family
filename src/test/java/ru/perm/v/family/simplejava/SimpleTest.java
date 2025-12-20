@@ -19,20 +19,19 @@ public class SimpleTest {
     void SimpleInt() {
         assertEquals(i1, i2);
         assertNull(i1);
-        assertEquals(null, i2);
+        assertNull(i2);
         assertEquals(0, i3);
     }
 
     @Test
     void nullPointerException() {
-        Map numberAndCount = new HashMap<>();
+        Map numberAndCount = new HashMap<Integer, Integer>();
+        numberAndCount.put(1, 1);
         assertThrows(NullPointerException.class, (Executable) numberAndCount.get(3));
     }
 
     @Test
     void testExpectedExceptionWithParentType() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            Integer.parseInt("One");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> Integer.parseInt("One"));
     }
 }

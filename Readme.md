@@ -9,6 +9,12 @@
 Сделано:
  rest, logging, behave, allure, Swagger(OpenApi), actuator (monitoring)
 
+Установка JAVA 11:
+
+````shell
+JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+````
+
 #### Тесты
 Echo тест
 ````

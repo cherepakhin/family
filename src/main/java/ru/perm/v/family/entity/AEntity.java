@@ -23,8 +23,7 @@ public abstract class AEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected
-    Long id;
+    protected Long id;
 
     public AEntity(Long id) {
         this.id = id;

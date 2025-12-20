@@ -11,7 +11,8 @@ import ru.perm.v.family.ctrl.exception.InternalException;
 
 @RestController("/echo")
 public class EchoCtrl {
-    Logger logger = Logger.getLogger(EchoCtrl.class.getName());
+    final Logger logger = Logger.getLogger(EchoCtrl.class.getName());
+
     @GetMapping("/{msg}")
     @ApiOperation(value = "Test controller", notes = "Echo")
     public String echo(@PathVariable(name = "msg", required = true) String msg) {

@@ -10,7 +10,7 @@ import static org.mockito.Mockito.*;
 
 class PersonServiceImplTest {
 
-    PersonRepository mockPersonRepository = mock(PersonRepository.class);
+    final PersonRepository mockPersonRepository = mock(PersonRepository.class);
     private PersonServiceImpl personService;
 
     @BeforeEach
