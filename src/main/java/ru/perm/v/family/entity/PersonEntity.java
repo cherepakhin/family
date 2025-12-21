@@ -15,10 +15,26 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = true)
 public class PersonEntity extends AEntity {
 
     @Column(name = "name")
     protected String name = "";
 
+    public PersonEntity(Long id, String name) {
+        super(id);
+        if (Objects.nonNull(name)) {
+            if (!name.isEmpty()) {
+                this.name = name;
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+            return "PersonEntity(" +
+                    "id=" + id +
+                    ", name=" + name +
+                    ')';
+    }
 }
