@@ -1,8 +1,0 @@
-{
-    "servers": {
-      "MCP Docs": {
-        "type": "sse",
-        "url": "https://gitmcp.io/cherepakhin/family"
-      }
-    }
-  }
