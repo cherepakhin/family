@@ -32,8 +32,10 @@ build/
 
 ### LOG ###
 logs/
+log/
 
 .trunk/
 
 *.lock
 *.part
+
