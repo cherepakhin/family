@@ -47,4 +47,27 @@ class PersonServiceImplTest {
         List<PersonEntity> receivedPersons = personService.findAll();
         assertEquals(2, receivedPersons.size());
     }
+
+    @Test
+    public void save() {
+        PersonEntity personEntity = new PersonEntity(1L, "NAME_1", "PHONE_1");
+
+        when(mockPersonRepository.save(personEntity)).thenReturn(personEntity);
+
+        PersonEntity savedPerson = personService.save(personEntity);
+
+        assertEquals(personEntity, savedPerson);
+        verify(mockPersonRepository, times(1)).save(personEntity);
+    }
+
+    @Test
+    public void deleteById() {
+        Long ID = 1L;
+
+        doNothing().when(mockPersonRepository).deleteById(ID);
+
+        personService.deleteById(ID);
+
+        verify(mockPersonRepository, times(1)).deleteById(ID);
+    }
 }
