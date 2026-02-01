@@ -11,6 +11,7 @@ import ru.perm.v.family.entity.PersonEntity;
 import ru.perm.v.family.repository.PersonRepository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
@@ -35,11 +36,19 @@ public class PersonServiceImpIntegrationTest {
     }
 
     @Test
-    void getById() {
+    void testGetById() {
+        PersonEntity gettedPerson = personService.getById(0L);
+
         PersonEntity expectedPerson = new PersonEntity();
         expectedPerson.setId(0L);
         expectedPerson.setName("-");
-        PersonEntity person = personService.getById(0L);
-        assertEquals(expectedPerson, person);
+        System.out.println("------------------");
+        System.out.println("gettedPerson: " + gettedPerson);
+        System.out.println("expectedPerson: " + expectedPerson);
+        System.out.println("equals:" + gettedPerson.equals(expectedPerson));
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>");
+        //assertTrue(expectedPerson.equals(gettedPerson));
+        assertEquals(expectedPerson, gettedPerson);;
+        //assertEquals(expectedPerson, person);
     }
 }

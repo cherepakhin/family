@@ -8,6 +8,8 @@ import ru.perm.v.family.repository.PersonRepository;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
+import java.util.List;
+
 class PersonServiceImplTest {
 
     final PersonRepository mockPersonRepository = mock(PersonRepository.class);
@@ -30,5 +32,19 @@ class PersonServiceImplTest {
 
         assertEquals(expectedPerson, person);
         verify(mockPersonRepository, times(1)).getById(ID);
+    }
+
+    @Test
+    public void findAll() {
+        PersonEntity personEntity1 = new PersonEntity();
+        personEntity1.setId(1L);
+
+        PersonEntity personEntity2 = new PersonEntity();
+        personEntity2.setId(2L);
+
+        when(mockPersonRepository.findAll()).thenReturn(List.of(personEntity1, personEntity2));
+
+        List<PersonEntity> receivedPersons = personService.findAll();
+        assertEquals(2, receivedPersons.size());
     }
 }

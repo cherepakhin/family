@@ -11,7 +11,7 @@ public class MapperPersonTest {
     void toDto() {
         Long ID = 1L;
         String NAME = "test";
-        PersonEntity personEntity1 = new PersonEntity(ID, NAME);
+        PersonEntity personEntity1 = new PersonEntity(ID, NAME,"+79999999999");
 
         PersonDto dto = MapperPerson.toDto(personEntity1);
 
@@ -24,7 +24,7 @@ public class MapperPersonTest {
     void toEntity() {
         Long ID = 1L;
         String NAME = "test";
-        PersonDto personDto = new PersonDto(ID, NAME);
+        PersonDto personDto = new PersonDto(ID, NAME, "+79999999999");
 
         PersonEntity entity = MapperPerson.toEntity(personDto);
 
