@@ -1,0 +1,54 @@
+spring:
+  main:
+    lazy-initialization: true
+  dataSource:
+    url: ${DB_URL:jdbc:postgresql://192.168.1.20:5432/family}
+    driverClassName: org.postgresql.Driver
+    username: ${DB_USERNAME:vasi}
+    password: ${DB_PASS:pass}
+  hibernate:
+    dialect: org.hibernate.dialect.PostgreSQLDialect
+    generate_statistics: true
+  jpa:
+    # show SQL statements in console.
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+
+server:
+  servlet:
+    context-path: /api
+  port: ${API_PORT:8780}
+
+logging:
+  level:
+    root: info
+  file:
+    name: log/app.log
+
+management:
+  health:
+    probes:
+      enabled: true
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: "/actuator"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  server:
+    port: 8781

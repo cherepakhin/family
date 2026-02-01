@@ -1,6 +1,7 @@
 package ru.perm.v.family.ctrl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -8,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -26,7 +28,10 @@ import ru.perm.v.family.service.PersonService;
 import java.util.List;
 
 @AutoConfigureMockMvc
-//@ContextConfiguration(classes = {PersonCtrl.class, PersonService.class})
+// тесты работают и без ContextConfiguration
+// Замена @SpringBootTest на @ContextConfiguration:
+// Это позволяет загружать только необходимую конфигурацию для тестов.
+@ContextConfiguration(classes = {PersonCtrl.class, PersonService.class})
 @WebMvcTest
 class PersonCtrlTest {
 
@@ -50,20 +55,39 @@ class PersonCtrlTest {
         assertEquals(mes, res);
     }
 
+    // Test with Mockito .thenReturn(personEntity)
     @Test
-    void getById() throws Exception {
+    void getByIdWithMockitoThenReturn() throws Exception {
         Long ID = 100L;
         String NAME = "name";
+        String PHONE = "phone";
         PersonEntity personEntity = new PersonEntity();
         personEntity.setId(ID);
         personEntity.setName(NAME);
-        when(personService.getById(100L)).thenReturn(personEntity);
-
+        Mockito.when(personService.getById(ID)).thenReturn(personEntity);
         MvcResult result = mockMvc.perform(get(urlPerson + "/id/" + ID))
                 .andExpect(status().isOk())
                 .andReturn();
         PersonDto personDto = new ObjectMapper().readValue(result.getResponse().getContentAsString(), PersonDto.class);
 
-        assertEquals(new PersonDto(ID, NAME), personDto);
+        assertEquals(new PersonDto(ID, NAME, PHONE), personDto);
+    }
+
+    // Test with Mockito doReturn(personEntity)...
+    @Test
+    void getByIdWithMockitoDoReturn() throws Exception {
+        Long ID = 100L;
+        String NAME = "name";
+        String PHONE = "phone";
+        PersonEntity personEntity = new PersonEntity();
+        personEntity.setId(ID);
+        personEntity.setName(NAME);
+        doReturn(personEntity).when(personService).getById(ID);
+        MvcResult result = mockMvc.perform(get(urlPerson + "/id/" + ID))
+                .andExpect(status().isOk())
+                .andReturn();
+        PersonDto personDto = new ObjectMapper().readValue(result.getResponse().getContentAsString(), PersonDto.class);
+
+        assertEquals(new PersonDto(ID, NAME, PHONE), personDto);
     }
 }
