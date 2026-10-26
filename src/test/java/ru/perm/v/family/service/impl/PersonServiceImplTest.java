@@ -21,26 +21,26 @@ class PersonServiceImplTest {
     }
 
     @Test
-    void getById() {
-        Long ID = 0L;
+    void getByN() {
+        Long N = 0L;
         PersonEntity expectedPerson = new PersonEntity();
-        expectedPerson.setId(ID);
+        expectedPerson.setN(N);
         expectedPerson.setName("-");
-        when(mockPersonRepository.getById(ID)).thenReturn(expectedPerson);
+        when(mockPersonRepository.getReferenceById(N)).thenReturn(expectedPerson);
 
-        PersonEntity person = personService.getById(ID);
+        PersonEntity person = personService.getByN(N);
 
         assertEquals(expectedPerson, person);
-        verify(mockPersonRepository, times(1)).getById(ID);
+        verify(mockPersonRepository, times(1)).getReferenceById(N);
     }
 
     @Test
     public void findAll() {
         PersonEntity personEntity1 = new PersonEntity();
-        personEntity1.setId(1L);
+        personEntity1.setN(1L);
 
         PersonEntity personEntity2 = new PersonEntity();
-        personEntity2.setId(2L);
+        personEntity2.setN(2L);
 
         when(mockPersonRepository.findAll()).thenReturn(List.of(personEntity1, personEntity2));
 
@@ -62,12 +62,12 @@ class PersonServiceImplTest {
 
     @Test
     public void deleteById() {
-        Long ID = 1L;
+        Long N = 1L;
 
-        doNothing().when(mockPersonRepository).deleteById(ID);
+        doNothing().when(mockPersonRepository).deleteById(N);
 
-        personService.deleteById(ID);
+        personService.deleteByN(N);
 
-        verify(mockPersonRepository, times(1)).deleteById(ID);
+        verify(mockPersonRepository, times(1)).deleteById(N);
     }
 }

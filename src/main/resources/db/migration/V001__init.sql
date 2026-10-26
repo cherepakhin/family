@@ -1,8 +1,8 @@
 CREATE TABLE person
 (
-    id     serial  NOT NULL UNIQUE,
+    n     serial  NOT NULL UNIQUE,
     "name" varchar NOT NULL default ''
 );
 
-insert into person(id, "name")
+insert into person(n, "name")
 values (0, '-');

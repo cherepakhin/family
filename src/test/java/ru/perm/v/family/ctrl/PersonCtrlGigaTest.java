@@ -52,38 +52,38 @@ class PersonCtrlGigaTest {
     // Test with Mockito .thenReturn(personEntity)
     @Test
     void getByIdWithMockitoThenReturn() throws Exception {
-        Long ID = 100L;
+        Long N = 100L;
         String NAME = "name";
         String PHONE = "phone";
         PersonEntity personEntity = new PersonEntity();
-        personEntity.setId(ID);
+        personEntity.setN(N);
         personEntity.setName(NAME);
         personEntity.setPhone(PHONE);
-        Mockito.when(personService.getById(ID)).thenReturn(personEntity);
-        MvcResult result = mockMvc.perform(get(urlPerson + "/id/" + ID))
+        Mockito.when(personService.getByN(N)).thenReturn(personEntity);
+        MvcResult result = mockMvc.perform(get(urlPerson + "/n/" + N))
                 .andExpect(status().isOk())
                 .andReturn();
         PersonDto personDto = new ObjectMapper().readValue(result.getResponse().getContentAsString(), PersonDto.class);
 
-        assertEquals(new PersonDto(ID, NAME, PHONE), personDto);
+        assertEquals(new PersonDto(N, NAME, PHONE), personDto);
     }
 
     // Test with Mockito doReturn(personEntity)...
     @Test
     void getByIdWithMockitoDoReturn() throws Exception {
-        Long ID = 100L;
+        Long N = 100L;
         String NAME = "name";
         String PHONE = "phone";
         PersonEntity personEntity = new PersonEntity();
-        personEntity.setId(ID);
+        personEntity.setN(N);
         personEntity.setName(NAME);
         personEntity.setPhone(PHONE);
-        doReturn(personEntity).when(personService).getById(ID);
-        MvcResult result = mockMvc.perform(get(urlPerson + "/id/" + ID))
+        doReturn(personEntity).when(personService).getByN(N);
+        MvcResult result = mockMvc.perform(get(urlPerson + "/n/" + N))
                 .andExpect(status().isOk())
                 .andReturn();
         PersonDto personDto = new ObjectMapper().readValue(result.getResponse().getContentAsString(), PersonDto.class);
 
-        assertEquals(new PersonDto(ID, NAME, PHONE), personDto);
+        assertEquals(new PersonDto(N, NAME, PHONE), personDto);
     }
 }

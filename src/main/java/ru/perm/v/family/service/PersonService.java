@@ -7,13 +7,13 @@ import ru.perm.v.family.entity.PersonEntity;
 import java.util.List;
 
 public interface PersonService {
-    PersonEntity getById(Long id);
+    PersonEntity getByN(Long n);
 
     PersonEntity save(PersonEntity entity);
 
     List<PersonEntity> findAll();
 
-    void deleteById(Long id);
+    void deleteByN(Long n);
 
     void delete(PersonEntity enity);
 

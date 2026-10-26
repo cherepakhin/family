@@ -11,25 +11,25 @@ import java.util.Objects;
 
 public class PersonDto {
 
-    private Long id = 0L;
+    private Long n = 0L;
     private String name = "";
     private String phone = "";
 
     public PersonDto() {
     }
 
-    public PersonDto(Long id, String name, String phone) {
-        this.id = id;
+    public PersonDto(Long n, String name, String phone) {
+        this.n = n;
         this.name = name;
         this.phone = phone;
     }
 
-    public Long getId() {
-        return id;
+    public Long getN() {
+        return n;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setN(Long n) {
+        this.n = n;
     }
 
     public String getName() {
@@ -49,23 +49,24 @@ public class PersonDto {
     }
 
     @Override
-    public String toString() {
-        return "PersonDto{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof PersonDto personDto)) return false;
-        return Objects.equals(id, personDto.id) && Objects.equals(name, personDto.name) && Objects.equals(phone, personDto.phone);
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonDto personDto = (PersonDto) o;
+        return Objects.equals(n, personDto.n) && Objects.equals(name, personDto.name) && Objects.equals(phone, personDto.phone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, phone);
+        return Objects.hash(n, name, phone);
+    }
+
+    @Override
+    public String toString() {
+        return "PersonDto{" +
+                "n=" + n +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
     }
 }

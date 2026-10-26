@@ -15,7 +15,7 @@ public class MapperPersonTest {
 
         PersonDto dto = MapperPerson.toDto(personEntity1);
 
-        assertEquals(personEntity1.getId(), dto.getId());
+        assertEquals(personEntity1.getN(), dto.getN());
         assertEquals(personEntity1.getName(), dto.getName()
         );
     }
@@ -28,7 +28,7 @@ public class MapperPersonTest {
 
         PersonEntity entity = MapperPerson.toEntity(personDto);
 
-        assertEquals(ID, entity.getId());
+        assertEquals(ID, entity.getN());
         assertEquals(NAME, entity.getName());
     }
 }

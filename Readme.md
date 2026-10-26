@@ -12,7 +12,17 @@
 Установка JAVA 11:
 
 ````shell
-JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
+````
+
+#### Maven
+
+````text
+The plugin com.lazerycode.jmeter:jmeter-maven-plugin:3.8.0 requires Maven version 3.9.0
+````
+Требуется версия 3.9.0. Установка maven wrapper:
+````shell
+mvn -N wrapper:wrapper -Dmaven=3.9.0
 ````
 
 #### Тесты
@@ -93,10 +103,10 @@ mvn javadoc:javadoc
 #### Swagger
 Запустить приложение
 ````shell
- mvn spring-boot:run
+ ./mvnw spring-boot:run
 ````
 Документация будет доступна<br/>
-В формате swagger [http://127.0.0.1:8780/api/swagger-ui/index.html]http://127.0.0.1:8780/api/swagger-ui/index.html)
+В формате swagger [http://127.0.0.1:8780/api/swagger-ui/index.html](http://127.0.0.1:8780/api/swagger-ui/index.html)
 <br/>
 В формате OpenApi [http://127.0.0.1:8780/api/v3/api-docs](http://127.0.0.1:8781/api/v3/api-docs)
 
@@ -108,12 +118,12 @@ http://127.0.0.1:8781/actuator/health
 
 ### Переменные окружения
 
-Java 11
+Java 17
 
 ````shell
-$ export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+$ export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/
 $ echo $JAVA_HOME
-/usr/lib/jvm/java-11-openjdk-amd64
+/usr/lib/jvm/java-17-openjdk-amd64/
 ````
 
 

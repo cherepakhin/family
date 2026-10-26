@@ -50,16 +50,16 @@ public class PersonCtrl {
         return mes;
     }
 
-    @GetMapping("/id/{id}")
-    public ResponseEntity<?> getById(
-            @ApiParam("ID person") @PathVariable Long id) {
-        log.info("Request id={}", id);
-        if (id == null) {
-            String error = "id is null";
+    @GetMapping("/n/{n}")
+    public ResponseEntity<?> getByN(
+            @ApiParam("N person") @PathVariable Long n) {
+        log.info("Request n={}", n);
+        if (n == null) {
+            String error = "n is null";
             log.error(error);
             return ResponseEntity.internalServerError().body(error);
         }
-        PersonEntity personEntity = personService.getById(id);
+        PersonEntity personEntity = personService.getByN(n);
         PersonDto personDto = MapperPerson.toDto(personEntity);
         return ResponseEntity.ok(personDto);
     }

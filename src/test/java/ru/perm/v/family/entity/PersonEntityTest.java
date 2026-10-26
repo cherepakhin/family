@@ -19,8 +19,8 @@ class PersonEntityTest {
     void setId() {
         for (int i = 0; i < 100; i++) {
             PersonEntity personEntity = new PersonEntity();
-            personEntity.setId((long) i);
-            assertEquals(i, personEntity.getId());
+            personEntity.setN((long) i);
+            assertEquals(i, personEntity.getN());
         }
     }
 
@@ -70,9 +70,9 @@ class PersonEntityTest {
 
     @Test
     void testToString() {
-        for (int i = 0; i < 100; i++) {
-            PersonEntity personEntity = new PersonEntity((long) i, "test" + i, "+79999999999");
-            assertEquals("PersonEntity(id=" + i + ", name=test" + i + ")", personEntity.toString());
+        for (int n = 0; n < 100; n++) {
+            PersonEntity personEntity = new PersonEntity((long) n, "test" + n, "+79999999999");
+            assertEquals("PersonEntity(n=" + n + ", name=test" + n + ", phone=+79999999999"+")", personEntity.toString());
         }
     }
 }

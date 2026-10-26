@@ -22,38 +22,43 @@ public abstract class AEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    @Column(name = "n")
+    protected Long n;
 
     public AEntity() {
-        this.id = -1L;
+
     }
 
-    public AEntity(Long id) {
-        this.id = id;
-        System.out.println(format("AEntity(Long id) id: %s", id));
+    public AEntity(Long n) {
+        this();
+        this.n = n;
     }
 
-    public Long getId() {
-        return this.id;
+    public Long getN() {
+        return this.n;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setN(Long n) {
+        this.n = n;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        AEntity aEntity = (AEntity) o;
-        System.out.println(format("aEntity.id: %s", ((AEntity) o).getId()));
-        System.out.println(format("this.id: %s", this.id));
-        boolean result = this.id.longValue() == aEntity.getId();
-        System.out.println(format("Equals: %s", result));
-        return result;
+        if (o == null) return false;
+        if (o instanceof AEntity) {
+            AEntity other = (AEntity) o;
+            if (!this.getN().equals(other.getN())) {
+                return false;
+            }
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hashCode(this.n);
     }
 }

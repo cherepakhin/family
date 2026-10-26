@@ -6,10 +6,10 @@ import ru.perm.v.family.entity.PersonEntity;
 public class MapperPerson {
 
     public static PersonDto toDto(PersonEntity personEntity) {
-        return new PersonDto(personEntity.getId(), personEntity.getName(), personEntity.getPhone());
+        return new PersonDto(personEntity.getN(), personEntity.getName(), personEntity.getPhone());
     }
 
     public static PersonEntity toEntity(PersonDto personDto) {
-        return new PersonEntity(personDto.getId(), personDto.getName(), personDto.getPhone());
+        return new PersonEntity(personDto.getN(), personDto.getName(), personDto.getPhone());
     }
 }

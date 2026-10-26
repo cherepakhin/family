@@ -25,10 +25,10 @@ class PersonFacadeServiceTest {
 
     @Test
     void getById() {
-        Long ID = 1L;
+        Long N = 1L;
         String NAME ="NAME_1";
         PersonEntity personEntity = new PersonEntity();
-        personEntity.setId(ID);
+        personEntity.setN(N);
         personEntity.setName(NAME);
 //        when(personService.getById(ID)).thenReturn(personEntity);
 //        PersonDto personDto=personFacadeService.getById(ID);
