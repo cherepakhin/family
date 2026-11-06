@@ -1,22 +1,24 @@
 spring:
   main:
     lazy-initialization: true
-  dataSource:
-    url: ${DB_URL:jdbc:postgresql://192.168.1.20:5432/family}
-    driverClassName: org.postgresql.Driver
-    username: ${DB_USERNAME:vasi}
-    password: ${DB_PASS:pass}
-  hibernate:
-    dialect: org.hibernate.dialect.PostgreSQLDialect
-    generate_statistics: true
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     # show SQL statements in console.
     show-sql: true
     properties:
       hibernate:
         format_sql: true
   flyway:
-    enabled: true
+    enabled: false
 
 server:
   servlet:

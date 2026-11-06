@@ -1,9 +1,11 @@
 package ru.perm.v.family.service.impl;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -18,6 +20,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PersonServiceImpIntegrationTest {
     @Autowired
     PersonRepository personRepository;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
+
+    /**
+     * Тестовая БД создаётся из schema.sql (копия миграций Flyway),
+     * но без строки с n=0, поэтому вставляем её явно.
+     */
+    @BeforeAll
+    public static void setUpData(@Autowired JdbcTemplate jdbc) {
+        jdbc.update("MERGE INTO person(n, name, phone) KEY(n) VALUES (0, '-', '-')");
+    }
     private PersonServiceImpl personService;
 
     @BeforeEach
